@@ -1,0 +1,25 @@
++---------------------+       +------------------+
+|      Contract       |       |    BillDetail    |
++---------------------+       +------------------+
+| - customerInfo      |       | - callDuration   |
+| - billingMethod      |       | - dataUsage       |
+|                     |       | - overageCharge   |
+| + calculateBill()   |       +------------------+
++---------------------+               ^
+          ^                          |
+          |                          |
+          |                          |
++-----------------+       +-------------------+
+| BasicContract   |       | InternetContract  |
++-----------------+       +-------------------+
+| - callRate       |       | - dataFreeLimit   |
+| - dataRate       |       | - overageRate      |
++-----------------+       +-------------------+
+               \             /
+                \           /
+                 \         /
+            +---------------------+
+            | DataFixContract     |
+            +---------------------+
+            | - fixedCharge       |
+            +---------------------+
